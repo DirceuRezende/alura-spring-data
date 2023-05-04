@@ -1,0 +1,14 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'application'
+      MYSQL_USER: 'docker'
+      MYSQL_PASSWORD: 'docker'
+      MYSQL_ROOT_PASSWORD: 'docker'
+    volumes:
+      - ./database-data:/var/lib/mysql
+    ports:
+      - 3306:3306
